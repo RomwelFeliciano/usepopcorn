@@ -18,7 +18,7 @@ StartRating.propTypes = {
 	className: PropTypes.string,
 	messages: PropTypes.array,
 	defaultRating: PropTypes.number,
-	// onSetRating: PropTypes.func,
+	onSetRating: PropTypes.func,
 };
 
 export default function StartRating({
@@ -28,14 +28,14 @@ export default function StartRating({
 	className = '',
 	messages = [],
 	defaultRating = 0,
-	// onSetRating,
+	onSetRating,
 }) {
 	const [rating, setRating] = useState(defaultRating);
 	const [tempRating, setTempRating] = useState(0);
 
 	function handleRating(rating) {
 		setRating(rating);
-		// onSetRating(rating);
+		onSetRating(rating);
 	}
 
 	const textStyle = {
